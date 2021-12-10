@@ -1,0 +1,26 @@
+"""
+Hi, here's your problem today. This problem was recently asked by Apple:
+
+Given a list of words in a string, reverse the words in-place (ie don't create a new string and reverse the words). Since python strings are not mutable, 
+you can assume the input will be a mutable sequence (like list).
+
+Here's an example and some starting code:
+
+def reverse_words(words):
+  # Fill this in.
+
+s = list("can you read this")
+reverse_words(s)
+print(''.join(s))
+# this read you can
+"""
+def reverse_words(words):
+    for i in range(len(words)//2):
+        tmp = words[i]
+        words[i] = words[-i-1]
+        words[-i-1] = tmp
+    return words
+
+s = list("can you read this")
+reverse_words(s)
+print(''.join(s))
